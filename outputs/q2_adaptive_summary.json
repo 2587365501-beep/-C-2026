@@ -1,0 +1,93 @@
+{
+  "comparison": {
+    "fixed_0_8": {
+      "days": 334,
+      "plan_grid_kwh": 22995583.33306501,
+      "final_grid_kwh": 22995583.33306501,
+      "charge_kwh": 6079566.920459666,
+      "discharge_kwh": 4924449.20557233,
+      "emergency_kwh": 565075.5253917525,
+      "spill_kwh": 4466351.648602761,
+      "plan_cost_yuan": 14095548.002309406,
+      "settlement_cost_yuan": 14095548.002309406,
+      "emergency_cost_yuan": 3413016.240063456,
+      "total_cost_yuan": 17508564.242372863,
+      "emergency_intervals": 1775,
+      "soc_min_kwh": 1200.0,
+      "soc_max_kwh": 10800.0,
+      "soc_bottom_hits": 1591,
+      "soc_top_hits": 17371,
+      "total_lp_solve_seconds": 2.0392274000059842
+    },
+    "adaptive": {
+      "days": 334,
+      "plan_grid_kwh": 23455835.38402664,
+      "final_grid_kwh": 23455835.38402664,
+      "charge_kwh": 5975025.129056671,
+      "discharge_kwh": 4839770.354535904,
+      "emergency_kwh": 492878.823374555,
+      "spill_kwh": 4874269.937913757,
+      "plan_cost_yuan": 14429834.070962423,
+      "settlement_cost_yuan": 14429834.070962423,
+      "emergency_cost_yuan": 3009105.44543456,
+      "total_cost_yuan": 17438939.516396984,
+      "emergency_intervals": 1552,
+      "soc_min_kwh": 1200.0,
+      "soc_max_kwh": 10800.0,
+      "soc_bottom_hits": 1377,
+      "soc_top_hits": 18081,
+      "total_lp_solve_seconds": 2.039525099992261
+    },
+    "cost_saving_yuan": 69624.72597587854,
+    "saving_rate": 0.003976609675816718
+  },
+  "selection_frequency": {
+    "0.60": 0,
+    "0.65": 2,
+    "0.70": 27,
+    "0.75": 37,
+    "0.80": 110,
+    "0.85": 122,
+    "0.90": 36
+  },
+  "validation": {
+    "adaptive": {
+      "name": "问题2-逐日自适应分位数LP",
+      "finite": true,
+      "nonnegative_grid": true,
+      "nonnegative_emergency": true,
+      "charge_power_limit": true,
+      "discharge_power_limit": true,
+      "soc_bounds": true,
+      "soc_transition_max_abs_kwh": 9.094947017729282e-13,
+      "cross_day_soc_error_kwh": 0.0,
+      "balance_max_abs_kwh": 2.2737367544323206e-13,
+      "emergency_cost_error_yuan": 1.4551915228366852e-11,
+      "passed": true
+    },
+    "fixed_0_8": {
+      "name": "问题2-固定80%分位数LP基准",
+      "finite": true,
+      "nonnegative_grid": true,
+      "nonnegative_emergency": true,
+      "charge_power_limit": true,
+      "discharge_power_limit": true,
+      "soc_bounds": true,
+      "soc_transition_max_abs_kwh": 9.094947017729282e-13,
+      "cross_day_soc_error_kwh": 0.0,
+      "balance_max_abs_kwh": 2.2737367544323206e-13,
+      "emergency_cost_error_yuan": 2.9103830456733704e-11,
+      "passed": true
+    },
+    "no_future_leakage": {
+      "passed": true,
+      "rule": "目标日d只汇总[d-28,d)的完整历史日成本；历史日h的预测和分位数裕度只使用h之前残差"
+    },
+    "frozen_intraday_plan": {
+      "passed": true,
+      "max_plan_revision_kwh": 0.0,
+      "official_daily_lp_solves": 365,
+      "intraday_reoptimizations": 0
+    }
+  }
+}
