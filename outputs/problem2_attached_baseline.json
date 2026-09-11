@@ -1,0 +1,96 @@
+{
+  "model": {
+    "time_step_hours": 0.16666666666666666,
+    "efficiency": 0.9,
+    "soc_min_kwh": 1200.0,
+    "soc_max_kwh": 10800.0,
+    "max_flow_kwh_per_interval": 833.3333333333333,
+    "emergency_price_multiplier": 5.0,
+    "decision_rule": "每天仅在0:00制定一次全天计划，日内不更新"
+  },
+  "LP": {
+    "method": "LP",
+    "days": 334,
+    "plan_kwh": 22063290.894732498,
+    "plan_cost": 13461747.304540308,
+    "emergency_kwh": 119533.118917951,
+    "emergency_cost": 723669.4724917266,
+    "curtail_kwh": 2959017.658153952,
+    "emergency_days": 132,
+    "emergency_events": 267,
+    "runtime_seconds": 2.032502800000657,
+    "checks": {
+      "max_balance_abs": 2.2737367544323206e-13,
+      "max_soc_dynamics_abs": 1.0231815394945443e-12,
+      "terminal_abs": 0.0,
+      "max_simultaneous_product": 0.0
+    },
+    "total_cost": 14185416.777032034,
+    "specified_dates": {
+      "2025-03-20": {
+        "emergency_kwh": 0.0,
+        "events": []
+      },
+      "2025-06-21": {
+        "emergency_kwh": 0.0,
+        "events": []
+      },
+      "2025-09-23": {
+        "emergency_kwh": 1525.5572863833322,
+        "events": [
+          {
+            "period": "20:30-22:00",
+            "kwh": 1525.5572863833322
+          }
+        ]
+      },
+      "2025-12-21": {
+        "emergency_kwh": 0.0,
+        "events": []
+      }
+    }
+  },
+  "MILP": {
+    "method": "MILP",
+    "days": 334,
+    "plan_kwh": 22063290.894732498,
+    "plan_cost": 13461747.304540308,
+    "emergency_kwh": 119533.118917951,
+    "emergency_cost": 723669.4724917266,
+    "curtail_kwh": 2959017.658153952,
+    "emergency_days": 132,
+    "emergency_events": 267,
+    "runtime_seconds": 7.699752599999556,
+    "checks": {
+      "max_balance_abs": 6.423306331271306e-12,
+      "max_soc_dynamics_abs": 5.32054400537163e-11,
+      "terminal_abs": 0.0,
+      "max_simultaneous_product": 0.0
+    },
+    "total_cost": 14185416.777032034,
+    "specified_dates": {
+      "2025-03-20": {
+        "emergency_kwh": 0.0,
+        "events": []
+      },
+      "2025-06-21": {
+        "emergency_kwh": 0.0,
+        "events": []
+      },
+      "2025-09-23": {
+        "emergency_kwh": 1525.5572863833322,
+        "events": [
+          {
+            "period": "20:30-22:00",
+            "kwh": 1525.5572863833322
+          }
+        ]
+      },
+      "2025-12-21": {
+        "emergency_kwh": 0.0,
+        "events": []
+      }
+    }
+  },
+  "verification": "PASSED"
+}
